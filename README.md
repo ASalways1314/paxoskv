@@ -1,15 +1,8 @@
 # paxoskv: a Naive and Basic paxos kv storage
 
-![naive](https://github.com/openacid/paxoskv/workflows/test/badge.svg?branch=naive)
-[![Build Status](https://travis-ci.com/openacid/paxoskv.svg?branch=naive)](https://travis-ci.com/openacid/paxoskv)
-
 这个repo 目前仅是用于学习的实例代码.
 
-这是一个基于paxos, 只有200行代码的kv存储系统的简单实现, 以最简洁的形式展示paxos如何运行, 作为 [可靠分布式系统-paxos的直观解释][] 这篇教程中的代码示例部分.
-
-因为有不少网友跟我问起这篇教程中的实现问题, 例如怎么把只能确定一个值的paxos应用到实际场景中.
-既然**Talk is cheap**, 那么就**Show me the code**, 把教程中描述的内容直接用代码实现出来, 希望能覆盖到教程中的每个细节. 帮助大家理解paxos的运行机制.
-
+这是一个基于paxos, 只有200行代码的kv存储系统的简单实现, 以最简洁的形式展示paxos如何运行
 NB-paxoskv 通过classic paxos建立一个简单的kv存储,
 这个版本只支持指定key-version的写入和读取:
 
@@ -23,16 +16,7 @@ NB-paxoskv 通过classic paxos建立一个简单的kv存储,
 
 - 没有以状态机的方式实现 WAL and compaction的存储, 它直接把paxos instance对应到key的每个版本上.
 
-# 名词
 
-在paxos相关的paper, [可靠分布式系统-paxos的直观解释][],
-以及这个repo中代码涉及到的各种名词, 下面列出的都是等价的:
-
-```
-rnd == bal == BallotNum ~= Ballot
-quorum == majority == 多数派
-voted value == accepted value // by an acceptor
-```
 
 # Usage
 
@@ -60,12 +44,9 @@ voted value == accepted value // by an acceptor
 
     - `example_set_get_test.go`: 使用paxos提供的接口实现指定key和ver的写入和读取.
 
-# Question
-
-如果有任何问题, 欢迎提[issue] :DDD.
 
 
 [issue]:                          https://github.com/openacid/paxoskv/issues/new/choose
-[可靠分布式系统-paxos的直观解释]: https://blog.openacid.com/algo/paxos/
+[可靠分布式系统-paxos的直观解释]: https://blog.openacid.com/post-res/paxos/%E5%8F%AF%E9%9D%A0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F-paxos%E7%9A%84%E7%9B%B4%E8%A7%82%E8%A7%A3%E9%87%8A.pdf
 [slide-32]:                       https://blog.openacid.com/algo/paxos/#slide-32
 [slide-33]:                       https://blog.openacid.com/algo/paxos/#slide-33

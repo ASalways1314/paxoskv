@@ -40,7 +40,7 @@ NB-paxoskv 通过classic paxos建立一个简单的kv存储,
         - 实现一个kv纯内存的存储, 每个key有多个version, 每个version对应一个paxos instance;
         - 以及启动n个Acceptor的grpc服务函数
 
-    - `paxos_slides_case_test.go`: 按照 [可靠分布式系统-paxos的直观解释][] 给出的两个例子([slide-32][]和[slide-33][]), 调用paxos接口来模拟这2个场景中的paxos运行.
+    - `paxos_slides_case_test.go`: 按照 [可靠分布式系统-paxos的直观解释][] 给出的两个例子slide-32和slide-33, 调用paxos接口来模拟这2个场景中的paxos运行.
 
     - `example_set_get_test.go`: 使用paxos提供的接口实现指定key和ver的写入和读取.
 
@@ -48,5 +48,4 @@ NB-paxoskv 通过classic paxos建立一个简单的kv存储,
 
 [issue]:                          https://github.com/openacid/paxoskv/issues/new/choose
 [可靠分布式系统-paxos的直观解释]: https://blog.openacid.com/post-res/paxos/%E5%8F%AF%E9%9D%A0%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F-paxos%E7%9A%84%E7%9B%B4%E8%A7%82%E8%A7%A3%E9%87%8A.pdf
-[slide-32]:                       https://blog.openacid.com/algo/paxos/#slide-32
-[slide-33]:                       https://blog.openacid.com/algo/paxos/#slide-33
+
